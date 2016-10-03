@@ -21,6 +21,8 @@ classdef SimulatedDaqWithMultiClamp < symphonyui.core.descriptions.RigDescriptio
                 'type', PropertyType('cellstr', 'row', {'0.3', '0.6', '1.2', '3.0', '4.0'}));
             green.addConfigurationSetting('gain', '', ...
                 'type', PropertyType('char', 'row', {'', 'low', 'medium', 'high'}));
+            green.addConfigurationSetting('lightPath', '', ...
+                'type', PropertyType('char', 'row', {'', 'above', 'below'}));
             obj.addDevice(green);
             
             blue = UnitConvertingDevice('Blue LED', 'V').bindStream(daq.getStream('ao3'));
@@ -28,6 +30,8 @@ classdef SimulatedDaqWithMultiClamp < symphonyui.core.descriptions.RigDescriptio
                 'type', PropertyType('cellstr', 'row', {'0.3', '0.6', '1.2', '3.0', '4.0'}));
             blue.addConfigurationSetting('gain', '', ...
                 'type', PropertyType('char', 'row', {'', 'low', 'medium', 'high'}));
+            blue.addConfigurationSetting('lightPath', '', ...
+                'type', PropertyType('char', 'row', {'', 'above', 'below'}));
             obj.addDevice(blue);
             
             trigger1 = UnitConvertingDevice('Trigger1', symphonyui.core.Measurement.UNITLESS).bindStream(daq.getStream('doport1'));
