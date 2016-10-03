@@ -12,7 +12,7 @@ classdef SimulatedDaqWithMultiClampAndStage < edu.washington.riekelab.simulate.r
             stage = edu.washington.riekelab.simulate.devices.StageDevice('localhost');
             obj.addDevice(stage);
             
-            frameMonitor = UnitConvertingDevice('Frame Monitor', 'V').bindStream(daq.getStream('ANALOG_IN.7'));
+            frameMonitor = UnitConvertingDevice('Frame Monitor', 'V').bindStream(daq.getStream('ai7'));
             obj.addDevice(frameMonitor);
         end
         
